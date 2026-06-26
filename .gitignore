@@ -6,3 +6,4 @@ build*/
 *.suo
 *.swp
 *.tmp
+docs/rendered_*/

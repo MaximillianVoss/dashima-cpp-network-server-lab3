@@ -30,6 +30,16 @@ python3 scripts/generate_benchmark_graph.py
 - `include/network_server/view`, `include/network_server/controller`, `src/view`, `src/controller` - диалоговый интерфейс по схеме MVC.
 - `tests` - unit-тесты Catch2 для логики и контейнера.
 - `docs/uml/class_diagram.puml` - UML-диаграмма классов.
+- `docs/uml/class_diagram.svg` и `docs/uml/class_diagram.png` - визуальная UML-диаграмма.
+- `docs/explanatory_note.docx` - пояснительная записка без внешнего шаблона.
+- `docs/compliance_checklist.md` - сверка с этапами выполнения работы.
+
+## Документация
+
+```bash
+python3 scripts/generate_uml_assets.py
+python3 scripts/create_explanatory_note_docx.py
+```
 
 ## Проверки
 
@@ -44,3 +54,5 @@ TSAN_OPTIONS=halt_on_error=1 setarch $(uname -m) -R ./build-tsan/network_server_
 ```
 
 `clang-tidy`, `cppcheck`, `valgrind` и `doxygen` в текущем WSL-окружении не установлены. Для документации подготовлен `Doxyfile`, а публичные методы классов описаны doxygen-комментариями в заголовках.
+
+Пояснительная записка `docs/explanatory_note.docx` структурно проверена через `python-docx`. Визуальный render-to-PNG через `render_docx.py` в текущем окружении не выполнен из-за отсутствия LibreOffice/soffice.

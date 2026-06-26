@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1480" viewBox="0 0 1600 1480">
+<rect width="1600" height="1480" fill="white"/>
+<text x="500" y="48" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#0b2545">UML class diagram: network server</text>
+<line x1="330" y1="560" x2="800" y2="445" stroke="#4a5568" stroke-width="3"/>
+<line x1="800" y1="560" x2="800" y2="445" stroke="#4a5568" stroke-width="3"/>
+<line x1="1290" y1="560" x2="800" y2="445" stroke="#4a5568" stroke-width="3"/>
+<line x1="800" y1="445" x2="320" y2="235" stroke="#4a5568" stroke-width="3"/>
+<line x1="1290" y1="560" x2="1310" y2="395" stroke="#4a5568" stroke-width="3"/>
+<line x1="580" y1="942" x2="450" y2="940" stroke="#4a5568" stroke-width="3"/>
+<line x1="1275" y1="860" x2="775" y2="1035" stroke="#4a5568" stroke-width="3"/>
+<line x1="835" y1="1190" x2="1275" y2="1075" stroke="#4a5568" stroke-width="3"/>
+<line x1="835" y1="1385" x2="355" y2="1200" stroke="#4a5568" stroke-width="3"/>
+<line x1="1275" y1="1160" x2="775" y2="1035" stroke="#4a5568" stroke-width="3" stroke-dasharray="10 8"/>
+<line x1="480" y1="642" x2="650" y2="647" stroke="#4a5568" stroke-width="3" stroke-dasharray="10 8"/>
+<line x1="950" y1="647" x2="1120" y2="657" stroke="#4a5568" stroke-width="3" stroke-dasharray="10 8"/>
+<rect x="640" y="230" width="320" height="215" rx="12" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
+<rect x="640" y="230" width="320" height="50" rx="12" fill="#e8eef5" stroke="#1f2937" stroke-width="2"/>
+<text x="654" y="252" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#0b2545">Packet</text>
+<text x="654" y="272" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#4b5563">&lt;&lt;abstract&gt;&gt;</text>
+<line x1="640" y1="280" x2="960" y2="280" stroke="#1f2937" stroke-width="2"/>
+<text x="654" y="306" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- senderAddress_: string</text>
+<text x="654" y="328" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- recipientAddress_: string</text>
+<text x="654" y="350" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- message_: MessageDescriptor</text>
+<line x1="640" y1="376" x2="960" y2="376" stroke="#9ca3af" stroke-width="1"/>
+<text x="654" y="398" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ type(): PacketType</text>
+<text x="654" y="420" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ describe(): string</text>
+<text x="654" y="442" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ senderAddress(): string</text>
+<rect x="180" y="560" width="300" height="165" rx="12" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
+<rect x="180" y="560" width="300" height="50" rx="12" fill="#e8eef5" stroke="#1f2937" stroke-width="2"/>
+<text x="194" y="582" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#0b2545">MailPacket</text>
+<text x="194" y="602" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#4b5563">&lt;&lt;model&gt;&gt;</text>
+<line x1="180" y1="610" x2="480" y2="610" stroke="#1f2937" stroke-width="2"/>
+<text x="194" y="636" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- userName_: string</text>
+<line x1="180" y1="662" x2="480" y2="662" stroke="#9ca3af" stroke-width="1"/>
+<text x="194" y="684" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ toFilePacket(): FilePacket</text>
+<text x="194" y="706" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ describe(): string</text>
+<rect x="650" y="560" width="300" height="175" rx="12" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
+<rect x="650" y="560" width="300" height="50" rx="12" fill="#e8eef5" stroke="#1f2937" stroke-width="2"/>
+<text x="664" y="582" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#0b2545">FilePacket</text>
+<text x="664" y="602" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#4b5563">&lt;&lt;model&gt;&gt;</text>
+<line x1="650" y1="610" x2="950" y2="610" stroke="#1f2937" stroke-width="2"/>
+<text x="664" y="636" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- codeType_: CodeType</text>
+<text x="664" y="658" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- infoType_: InfoType</text>
+<line x1="650" y1="684" x2="950" y2="684" stroke="#9ca3af" stroke-width="1"/>
+<text x="664" y="706" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ toHypertextPacket(): HypertextPacket</text>
+<text x="664" y="728" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ codeType(): CodeType</text>
+<rect x="1120" y="560" width="340" height="195" rx="12" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
+<rect x="1120" y="560" width="340" height="50" rx="12" fill="#e8eef5" stroke="#1f2937" stroke-width="2"/>
+<text x="1134" y="582" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#0b2545">HypertextPacket</text>
+<text x="1134" y="602" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#4b5563">&lt;&lt;model&gt;&gt;</text>
+<line x1="1120" y1="610" x2="1460" y2="610" stroke="#1f2937" stroke-width="2"/>
+<text x="1134" y="636" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- codeType_: CodeType</text>
+<text x="1134" y="658" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- infoType_: InfoType</text>
+<text x="1134" y="680" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- links_: vector&lt;LinkDescriptor&gt;</text>
+<line x1="1120" y1="706" x2="1460" y2="706" stroke="#9ca3af" stroke-width="1"/>
+<text x="1134" y="728" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ linkCount(): size_t</text>
+<text x="1134" y="750" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ links(): vector&lt;LinkDescriptor&gt;</text>
+<rect x="170" y="235" width="300" height="145" rx="12" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
+<rect x="170" y="235" width="300" height="50" rx="12" fill="#e8eef5" stroke="#1f2937" stroke-width="2"/>
+<text x="184" y="257" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#0b2545">MessageDescriptor</text>
+<text x="184" y="277" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#4b5563">&lt;&lt;model&gt;&gt;</text>
+<line x1="170" y1="285" x2="470" y2="285" stroke="#1f2937" stroke-width="2"/>
+<text x="184" y="311" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- content_: string</text>
+<line x1="170" y1="337" x2="470" y2="337" stroke="#9ca3af" stroke-width="1"/>
+<text x="184" y="359" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ length(): size_t</text>
+<text x="184" y="381" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ content(): string</text>
+<rect x="1160" y="250" width="300" height="145" rx="12" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
+<rect x="1160" y="250" width="300" height="50" rx="12" fill="#e8eef5" stroke="#1f2937" stroke-width="2"/>
+<text x="1174" y="272" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#0b2545">LinkDescriptor</text>
+<text x="1174" y="292" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#4b5563">&lt;&lt;model&gt;&gt;</text>
+<line x1="1160" y1="300" x2="1460" y2="300" stroke="#1f2937" stroke-width="2"/>
+<text x="1174" y="326" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- protocol_: ProtocolType</text>
+<text x="1174" y="348" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- serverName_: string</text>
+<line x1="1160" y1="374" x2="1460" y2="374" stroke="#9ca3af" stroke-width="1"/>
+<text x="1174" y="396" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ describe(): string</text>
+<rect x="580" y="850" width="390" height="185" rx="12" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
+<rect x="580" y="850" width="390" height="50" rx="12" fill="#e8eef5" stroke="#1f2937" stroke-width="2"/>
+<text x="594" y="872" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#0b2545">TransmissionTable</text>
+<text x="594" y="892" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#4b5563">&lt;&lt;model&gt;&gt;</text>
+<line x1="580" y1="900" x2="970" y2="900" stroke="#1f2937" stroke-width="2"/>
+<text x="594" y="926" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- table_: HashTable&lt;PacketKey, shared_ptr&lt;Packet&gt;&gt;</text>
+<line x1="580" y1="952" x2="970" y2="952" stroke="#9ca3af" stroke-width="1"/>
+<text x="594" y="974" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ insert(packet): bool</text>
+<text x="594" y="996" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ find(recipient, type): Packet</text>
+<text x="594" y="1018" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ remove(recipient, type): bool</text>
+<rect x="90" y="850" width="360" height="180" rx="12" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
+<rect x="90" y="850" width="360" height="50" rx="12" fill="#e8eef5" stroke="#1f2937" stroke-width="2"/>
+<text x="104" y="872" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#0b2545">HashTable&lt;Key, Value&gt;</text>
+<text x="104" y="892" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#4b5563">&lt;&lt;template container&gt;&gt;</text>
+<line x1="90" y1="900" x2="450" y2="900" stroke="#1f2937" stroke-width="2"/>
+<text x="104" y="926" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- buckets_: unique_ptr&lt;Bucket[]&gt;</text>
+<text x="104" y="948" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- size_: size_t</text>
+<line x1="90" y1="974" x2="450" y2="974" stroke="#9ca3af" stroke-width="1"/>
+<text x="104" y="996" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ insert(key, value): bool</text>
+<text x="104" y="1018" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ erase(key): bool</text>
+<text x="104" y="1040" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ begin()/end(): iterator</text>
+<rect x="1080" y="860" width="390" height="215" rx="12" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
+<rect x="1080" y="860" width="390" height="50" rx="12" fill="#e8eef5" stroke="#1f2937" stroke-width="2"/>
+<text x="1094" y="882" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#0b2545">ServerDescriptor</text>
+<text x="1094" y="902" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#4b5563">&lt;&lt;model&gt;&gt;</text>
+<line x1="1080" y1="910" x2="1470" y2="910" stroke="#1f2937" stroke-width="2"/>
+<text x="1094" y="936" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- networkName_: string</text>
+<text x="1094" y="958" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- networkAddress_: string</text>
+<text x="1094" y="980" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- transmissions_: TransmissionTable</text>
+<line x1="1080" y1="1006" x2="1470" y2="1006" stroke="#9ca3af" stroke-width="1"/>
+<text x="1094" y="1028" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ addPacket(packet): bool</text>
+<text x="1094" y="1050" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ selectByRecipientPriority()</text>
+<text x="1094" y="1072" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ percentagesParallel()</text>
+<rect x="1080" y="1160" width="390" height="135" rx="12" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
+<rect x="1080" y="1160" width="390" height="50" rx="12" fill="#e8eef5" stroke="#1f2937" stroke-width="2"/>
+<text x="1094" y="1182" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#0b2545">PacketStatistics</text>
+<text x="1094" y="1202" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#4b5563">&lt;&lt;service&gt;&gt;</text>
+<line x1="1080" y1="1210" x2="1470" y2="1210" stroke="#1f2937" stroke-width="2"/>
+<line x1="1080" y1="1240" x2="1470" y2="1240" stroke="#9ca3af" stroke-width="1"/>
+<text x="1094" y="1262" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ calculateSequential(table)</text>
+<text x="1094" y="1284" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ calculateParallel(table)</text>
+<rect x="190" y="1200" width="330" height="175" rx="12" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
+<rect x="190" y="1200" width="330" height="50" rx="12" fill="#e8eef5" stroke="#1f2937" stroke-width="2"/>
+<text x="204" y="1222" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#0b2545">ConsoleView</text>
+<text x="204" y="1242" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#4b5563">&lt;&lt;view&gt;&gt;</text>
+<line x1="190" y1="1250" x2="520" y2="1250" stroke="#1f2937" stroke-width="2"/>
+<text x="204" y="1276" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- input_: istream</text>
+<text x="204" y="1298" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- output_: ostream</text>
+<line x1="190" y1="1324" x2="520" y2="1324" stroke="#9ca3af" stroke-width="1"/>
+<text x="204" y="1346" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ showMenu()</text>
+<text x="204" y="1368" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ readPacketType()</text>
+<text x="204" y="1390" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ showPercentages()</text>
+<rect x="650" y="1190" width="370" height="195" rx="12" fill="#ffffff" stroke="#1f2937" stroke-width="2"/>
+<rect x="650" y="1190" width="370" height="50" rx="12" fill="#e8eef5" stroke="#1f2937" stroke-width="2"/>
+<text x="664" y="1212" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#0b2545">ServerController</text>
+<text x="664" y="1232" font-family="Arial, sans-serif" font-size="13" font-weight="400" fill="#4b5563">&lt;&lt;controller&gt;&gt;</text>
+<line x1="650" y1="1240" x2="1020" y2="1240" stroke="#1f2937" stroke-width="2"/>
+<text x="664" y="1266" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- server_: ServerDescriptor</text>
+<text x="664" y="1288" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- view_: ConsoleView</text>
+<line x1="650" y1="1314" x2="1020" y2="1314" stroke="#9ca3af" stroke-width="1"/>
+<text x="664" y="1336" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">+ run()</text>
+<text x="664" y="1358" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- addPacket()</text>
+<text x="664" y="1380" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#111827">- convertPacket()</text>
+</svg>

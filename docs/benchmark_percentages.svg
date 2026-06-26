@@ -5,8 +5,8 @@
   <line x1="80" y1="40" x2="80" y2="440" stroke="#222"/>
   <text x="450.0" y="508" text-anchor="middle" font-size="14" font-family="Arial">packet count</text>
   <text x="18" y="260.0" transform="rotate(-90 18 260.0)" text-anchor="middle" font-size="14" font-family="Arial">microseconds</text>
-  <polyline fill="none" stroke="#1f77b4" stroke-width="3" points="85.20,438.64 132.00,422.56 340.00,305.70 860.00,40.00" />
-  <polyline fill="none" stroke="#d62728" stroke-width="3" points="85.20,428.41 132.00,415.71 340.00,295.91 860.00,57.78" />
+  <polyline fill="none" stroke="#1f77b4" stroke-width="3" points="85.20,438.45 132.00,416.78 340.00,287.87 860.00,40.00" />
+  <polyline fill="none" stroke="#d62728" stroke-width="3" points="85.20,428.94 132.00,416.06 340.00,288.41 860.00,45.23" />
   <text x="85.20" y="478" text-anchor="middle" font-size="13">300</text><text x="132.00" y="478" text-anchor="middle" font-size="13">3000</text><text x="340.00" y="478" text-anchor="middle" font-size="13">15000</text><text x="860.00" y="478" text-anchor="middle" font-size="13">45000</text>
   <text x="640" y="58" font-size="14" font-family="Arial" fill="#1f77b4">sequential</text>
   <text x="640" y="80" font-size="14" font-family="Arial" fill="#d62728">parallel</text>

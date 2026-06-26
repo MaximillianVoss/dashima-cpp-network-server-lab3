@@ -62,7 +62,7 @@ def main() -> None:
   <text x="{width - 260}" y="80" font-size="14" font-family="Arial" fill="#d62728">parallel</text>
 </svg>
 '''
-    SVG_PATH.write_text(svg, encoding="utf-8")
+    SVG_PATH.write_text(svg, encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":
