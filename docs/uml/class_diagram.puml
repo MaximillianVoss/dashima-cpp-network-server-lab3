@@ -1,0 +1,114 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+namespace network_server.container {
+  class "HashTable<Key, Value>" as HashTable {
+    +insert(key, value) : bool
+    +erase(key) : bool
+    +find(key) : Value*
+    +begin() : iterator
+    +end() : iterator
+  }
+}
+
+namespace network_server.model {
+  enum PacketType {
+    Mail
+    File
+    Hypertext
+  }
+
+  class MessageDescriptor {
+    -content_ : string
+    +length() : size_t
+    +content() : string
+  }
+
+  class LinkDescriptor {
+    -protocol_ : ProtocolType
+    -serverName_ : string
+    +describe() : string
+  }
+
+  abstract class Packet {
+    -senderAddress_ : string
+    -recipientAddress_ : string
+    -message_ : MessageDescriptor
+    +type() : PacketType
+    +describe() : string
+  }
+
+  class MailPacket {
+    -userName_ : string
+    +toFilePacket() : FilePacket
+  }
+
+  class FilePacket {
+    -codeType_ : CodeType
+    -infoType_ : InfoType
+    +toHypertextPacket() : HypertextPacket
+  }
+
+  class HypertextPacket {
+    -codeType_ : CodeType
+    -infoType_ : InfoType
+    -links_ : vector<LinkDescriptor>
+  }
+
+  class PacketKey {
+    +recipientAddress : string
+    +packetType : PacketType
+  }
+
+  class TransmissionTable {
+    -table_ : HashTable<PacketKey, shared_ptr<Packet>>
+    +insert(packet) : bool
+    +find(recipient, type) : Packet
+    +remove(recipient, type) : bool
+  }
+
+  class ServerDescriptor {
+    -networkName_ : string
+    -networkAddress_ : string
+    -transmissions_ : TransmissionTable
+    +selectByRecipientPriority(recipient) : Packet
+    +senderAddresses() : vector<string>
+    +percentagesParallel() : PacketPercentages
+  }
+
+  class PacketStatistics {
+    +calculateSequential(table) : PacketPercentages
+    +calculateParallel(table) : PacketPercentages
+  }
+}
+
+namespace network_server.view {
+  class ConsoleView {
+    +showMenu()
+    +readPacketType() : PacketType
+    +showPercentages(percentages)
+  }
+}
+
+namespace network_server.controller {
+  class ServerController {
+    -server_ : ServerDescriptor
+    -view_ : ConsoleView
+    +run()
+  }
+}
+
+Packet <|-- MailPacket
+Packet <|-- FilePacket
+Packet <|-- HypertextPacket
+Packet *-- MessageDescriptor
+HypertextPacket *-- LinkDescriptor
+TransmissionTable *-- HashTable
+ServerDescriptor *-- TransmissionTable
+PacketStatistics ..> TransmissionTable
+ServerController *-- ServerDescriptor
+ServerController *-- ConsoleView
+MailPacket ..> FilePacket
+FilePacket ..> HypertextPacket
+
+@enduml
