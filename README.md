@@ -46,6 +46,170 @@ powershell -ExecutionPolicy Bypass -File .\run-wsl.ps1
 .\run-wsl.ps1 -BuildType Release
 ```
 
+## Что вводить при запуске
+
+После запуска `.\run-wsl.ps1` или `./build/network_server_dialog` программа выводит информацию о сервере и меню:
+
+```text
+Server name: study.server.local
+Server address: 127.0.0.1
+Transmission table is empty.
+
+Network server dialog
+1. Add packet
+2. Find packet by recipient and type
+3. Delete packet by recipient and type
+4. Select packet by recipient priority
+5. Convert packet
+6. Show transmission table
+7. Show senders
+8. Show packet type percentages
+0. Exit
+>
+```
+
+Вводятся номера пунктов меню. Для выхода введите `0`, после этого должно появиться:
+
+```text
+Done.
+```
+
+Дополнительные числовые варианты внутри меню:
+
+```text
+Packet type: 1 - mail, 2 - file, 3 - hypertext
+Code type:   1 - ASCII, 2 - BIN
+Info type:   1 - control, 2 - data
+Protocol:    1 - FTP, 2 - HTTP
+```
+
+Адреса и сетевые имена вводятся как строки. Имя пользователя для почтового пакета должно быть не длиннее 20 символов. Количество ссылок для гипертекста должно быть неотрицательным числом.
+
+### Минимальный сценарий проверки
+
+1. Добавить почтовый пакет:
+
+```text
+1
+1
+192.168.1.10
+10.0.0.5
+Hello mail
+dashima
+```
+
+Что это означает:
+
+- `1` - пункт меню `Add packet`;
+- `1` - тип пакета `mail`;
+- `192.168.1.10` - адрес отправителя;
+- `10.0.0.5` - адрес получателя;
+- `Hello mail` - сообщение;
+- `dashima` - имя пользователя.
+
+Ожидаемый результат:
+
+```text
+Packet added.
+```
+
+2. Показать таблицу передач:
+
+```text
+6
+```
+
+Ожидаемо в выводе должны быть строки примерно такого вида:
+
+```text
+Transmission table (1 packets):
+type: mail
+sender: 192.168.1.10
+recipient: 10.0.0.5
+message length: 10
+message: Hello mail
+user name: dashima
+```
+
+3. Показать процентное соотношение пакетов:
+
+```text
+8
+```
+
+Ожидаемый результат для одного mail-пакета:
+
+```text
+Total packets: 1
+mail: 100%
+file: 0%
+hypertext: 0%
+```
+
+4. Выйти:
+
+```text
+0
+```
+
+### Пример добавления файлового пакета
+
+```text
+1
+2
+192.168.1.20
+10.0.0.6
+File payload
+1
+2
+```
+
+Расшифровка:
+
+- `1` - добавить пакет;
+- `2` - тип `file`;
+- `192.168.1.20` - отправитель;
+- `10.0.0.6` - получатель;
+- `File payload` - сообщение;
+- `1` - код `ASCII`;
+- `2` - информация `data`.
+
+Ожидаемый результат:
+
+```text
+Packet added.
+```
+
+### Пример добавления гипертекстового пакета
+
+```text
+1
+3
+192.168.1.30
+10.0.0.7
+Html payload
+2
+1
+1
+2
+www.mephi.ru
+```
+
+Расшифровка:
+
+- `1` - добавить пакет;
+- `3` - тип `hypertext`;
+- `192.168.1.30` - отправитель;
+- `10.0.0.7` - получатель;
+- `Html payload` - сообщение;
+- `2` - код `BIN`;
+- `1` - информация `control`;
+- `1` - количество ссылок;
+- `2` - протокол `HTTP`;
+- `www.mephi.ru` - сетевое имя сервера ссылки.
+
+После команды `6` в таблице должен появиться пакет `type: hypertext` с блоком `links: 1`.
+
 ## Ручная сборка в WSL/Linux
 
 ```bash
