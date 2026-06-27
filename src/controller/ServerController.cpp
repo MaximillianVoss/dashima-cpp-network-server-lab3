@@ -6,6 +6,7 @@
 
 #include <exception>
 #include <memory>
+#include <stdexcept>
 #include <sstream>
 #include <utility>
 
@@ -64,6 +65,12 @@ void ServerController::run() {
                     view_.showMessage("Unknown menu command.");
                     break;
             }
+        } catch (const std::runtime_error& error) {
+            if (std::string{error.what()} == "Input stream was closed") {
+                view_.showMessage("Input stream closed. Done.");
+                return;
+            }
+            view_.showMessage(std::string{"Error: "} + error.what());
         } catch (const std::exception& error) {
             view_.showMessage(std::string{"Error: "} + error.what());
         }

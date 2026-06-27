@@ -4,6 +4,26 @@
 
 ## Сборка
 
+Windows PowerShell + WSL:
+
+```powershell
+.\run-wsl.ps1
+```
+
+Если PowerShell блокирует запуск локальных скриптов:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\run-wsl.ps1
+```
+
+Только собрать и прогнать тесты без запуска диалога:
+
+```powershell
+.\run-wsl.ps1 -RunTests -NoRun
+```
+
+Скрипт проверяет наличие WSL-дистрибутива `Ubuntu-22.04`, при необходимости предлагает/запускает установку WSL и ставит в Ubuntu пакеты `build-essential`, `cmake`, `git`, `ca-certificates`, `python3`.
+
 ```bash
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build
